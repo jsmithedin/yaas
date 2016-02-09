@@ -4,7 +4,7 @@ const Hapi = require('hapi');
 
 const server = new Hapi.Server();
 server.connection({
-    host: '0.0.0.0', 
+    host: '0.0.0.0',
     port: 1314
 });
 
@@ -14,6 +14,16 @@ server.route({
     handler: function(req, reply) {
         reply({
             message: "mon then"
+        }).code( 200 );
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/independence',
+    handler: function(req, reply) {
+        reply({
+            message: "soon..."
         }).code( 200 );
     }
 });
